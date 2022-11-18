@@ -1,9 +1,8 @@
 const router = require('express').Router()
 const {Physicians} = require('../db/models')
-const Sequelize = require('sequelize')
 module.exports = router
 
-  // Retrieve all Tutorials
+  // Retrieve all Physicians
   router.get("/", async (req,res, next)=>{
     try {
       const physicians = await Physicians.findAll()
