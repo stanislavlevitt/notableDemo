@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const Physician = db.define('physicians',{
+const Physicians = db.define('physicians',{
   firstName:{
     type: Sequelize.STRING
   },
@@ -10,4 +10,4 @@ const Physician = db.define('physicians',{
   },
 })
 
-module.exports = Physician
+module.exports = Physicians

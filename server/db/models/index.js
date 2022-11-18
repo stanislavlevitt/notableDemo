@@ -1,11 +1,11 @@
 const Appointments = require('./appointments')
-const Physician = require('./physicians')
+const Physicians = require('./physicians')
 
-Physician.hasMany(Appointments)
-Appointments.belongsTo(Physician)
+Physicians.hasMany(Appointments)
+Appointments.belongsTo(Physicians)
 
 
 module.exports = {
   Appointments,
-  Physician
+  Physicians
 }

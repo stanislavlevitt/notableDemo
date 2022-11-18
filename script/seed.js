@@ -1,19 +1,19 @@
 'use strict'
 
 const db = require('../server/db')
-const {Appointments, Physician} = require('../server/db/models')
+const {Appointments, Physicians} = require('../server/db/models')
 
 async function seed() {
   await db.sync({force: true})
-  const Physician1 = await Physician.create({
+  const Physician1 = await Physicians.create({
     firstName: 'Julius',
     lastName: 'Hibbert',
   })
-  const Physician2 = await Physician.create({
+  const Physician2 = await Physicians.create({
     firstName: 'Algemop',
     lastName: 'Krieger',
   })
-  const Physician3 = await Physician.create({
+  const Physician3 = await Physicians.create({
     firstName: 'Nick',
     lastName: 'Riviera',
   })
