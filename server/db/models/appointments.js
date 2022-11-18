@@ -6,7 +6,7 @@ const Appointments = db.define('appointments',{
     type: Sequelize.STRING
   },
   time:{
-    type: Sequelize.DATE
+    type: Sequelize.STRING
   },
   kind:{
     type: Sequelize.STRING

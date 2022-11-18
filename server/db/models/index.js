@@ -1,5 +1,5 @@
 const Appointments = require('./appointments')
-const Physician = require('./physician')
+const Physician = require('./physicians')
 
 Physician.hasMany(Appointments)
 Appointments.belongsTo(Physician)
