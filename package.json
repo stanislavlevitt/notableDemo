@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha 'server/tests/**/*.test.js'",
     "start": "node server/server.js & npm run start-client",
-    "start-client": "cd client && npm run dev "
+    "start-client": "cd client && npm run dev ",
+    "seed": "node script/seed.js"
   },
   "repository": {
     "type": "git",
