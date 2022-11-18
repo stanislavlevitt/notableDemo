@@ -81,7 +81,7 @@ const PhysiciansList = () => {
 ) : (
   <div>
     <br />
-    <p>Please click on a Physician...</p>
+    <p>Please click on a Physician to see their appointment schedule...</p>
   </div>
 )}
 </div>
