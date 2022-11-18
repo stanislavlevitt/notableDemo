@@ -1,7 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import DataService from "../services/physiciansService";
 
-const initialState = [];
+const initialState = {
+  doctors: [],
+  schedules: [],
+};
 
 export const retrievePhysicians = createAsyncThunk(
   "physicians",
@@ -11,12 +14,29 @@ export const retrievePhysicians = createAsyncThunk(
   }
 );
 
+export const retrieveAppointment = createAsyncThunk(
+  "appointments",
+  async ({id}) => {
+    const res = await DataService.getAppointments(id);
+    return res.data;
+  }
+);
+
 const physicianSlice = createSlice({
   name: "physicians",
   initialState,
   extraReducers: {
     [retrievePhysicians.fulfilled]: (state, action) => {
-      return [...action.payload];
+      return {
+        ...state,
+        doctors: action.payload
+      };
+    },
+    [retrieveAppointment.fulfilled]: (state, action) => {
+      return {
+        ...state,
+        schedules: action.payload
+      };
     },
   },
 })
