@@ -8,6 +8,9 @@ const Physicians = db.define('physicians',{
   lastName:{
     type: Sequelize.STRING
   },
+  email:{
+    type: Sequelize.STRING
+  },
 })
 
 module.exports = Physicians

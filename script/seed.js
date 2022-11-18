@@ -8,14 +8,17 @@ async function seed() {
   const Physician1 = await Physicians.create({
     firstName: 'Julius',
     lastName: 'Hibbert',
+    email:'ribbert@notablehealth.com',
   })
   const Physician2 = await Physicians.create({
     firstName: 'Algemop',
     lastName: 'Krieger',
+    email:'krieger@notablehealth.com',
   })
   const Physician3 = await Physicians.create({
     firstName: 'Nick',
     lastName: 'Riviera',
+    email:'riviera@notablehealth.com',
   })
 
 

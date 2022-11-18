@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
 import {
   retrievePhysicians,
 } from "../slices/physicians";
 
 const PhysiciansList = () => {
+  const [currentPhysician, setCurrentPhysician] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const physicians = useSelector(state => state.physicians);
 
@@ -20,6 +20,11 @@ const PhysiciansList = () => {
     initFetch()
   }, [initFetch])
 
+  const setActivePhysician = (physician, index) => {
+    setCurrentPhysician(physician);
+    setCurrentIndex(index);
+  };
+
   return (
     <div className="list row">
       <div className="col-md-6">
@@ -32,6 +37,7 @@ const PhysiciansList = () => {
                 className={
                   "list-group-item " + (index === currentIndex ? "active" : "")
                 }
+                onClick={() => setActivePhysician(physician, index)}
                 key={index}
               >
                 {physician.lastName}, {physician.firstName},
@@ -39,6 +45,20 @@ const PhysiciansList = () => {
             ))}
         </ul>
       </div>
+
+      <div className="col-md-6">
+{currentPhysician ? (
+  <div>
+    <h2>Dr. {currentPhysician.firstName} {currentPhysician.lastName}</h2>
+    <h4>Dr. {currentPhysician.email}</h4>
+  </div>
+) : (
+  <div>
+    <br />
+    <p>Please click on a Physician...</p>
+  </div>
+)}
+</div>
 
     </div>
   );
